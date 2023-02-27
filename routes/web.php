@@ -18,16 +18,7 @@
     Route ::get ( '/' , function () {
         return view ( 'welcome' );
     } );
-    Route ::get ( '/posts' , [
-        PostController::class , '__invoke'
-    ] );
-    Route ::get ( '/post' , function () {
-        return view ( 'pages.post' );
-    } );
-    Route ::get ( '/about' , function () {
-        return view ( 'pages.aboutus' );
-    } );
-    Route ::get ( '/home' , [
-        HomeController::class , 'index'
-    ] );
+    Route::get('/about', function(){
+        return view('pages.about');
+    });
 

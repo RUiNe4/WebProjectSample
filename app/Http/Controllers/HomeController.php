@@ -6,6 +6,6 @@
     {
         public function index ()
         {
-            return view('pages.home');
+            return view('welcome');
         }
     }

@@ -1,29 +1,32 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $title }}</title>
-    @vite('resources/css/app.css')
-</head>
-<body>
-<header>
-    <h1>
-        Main layout
-    </h1>
-    <h1>
-        {{ $slot }}
-    </h1>
-    <nav>
-        <ul>
-            <li><a href="{{url('/home')}}">Home</a></li>
-            <li><a href="{{url('/about')}}">About us</a></li>
-            <li>Settings</li>
-        </ul>
-    </nav>
-</header>
-{{--{{ $slot }}--}}
-</body>
-</html>
+@extends('layouts.master')
+<style>
+    main {
+        font-family: 'Inria Sans';
+        height: 100vh;
+        overflow-x: hidden;
+    }
+</style>
+<main style="background-color: #70AFDD" class="py-5 px-4">
+    <div class="mt-5 flex items-center">
+        <section style="flex: 1;" class="p-5">
+            <div>
+                <div class="pl-5 text-5xl font-bold p-3 italic tracking-wider">
+                    {{ $mainHeader }}
+                </div>
+                <div style="font-size:16px;" class="py-3">
+                    {{ $mainContent }}
+                </div>
+            </div>
+            <button class="mt-3 btn bg-white border border-black rounded-3xl w-60">
+                <div class="p-3 text-xl">
+                    {{ $buttonText }}
+                </div>
+            </button>
+        </section>
+        <section style="flex:1;" class="flex">
+            <div class="m-auto">
+                <img src="storage/reancode.png" alt="" width="580px">
+            </div>
+        </section>
+    </div>
+</main>
